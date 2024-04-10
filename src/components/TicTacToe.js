@@ -49,13 +49,11 @@ const TicTacToe = () => {
 
   return (
     <div className="mx-auto flex justify-center w-svh min-h-svh bg-purple-200">
-      <div className="my-5 bg-purple-100 rounded-3xl  min-h-svh mx-auto w-1/2">
-        <div className="my-5 text-center" >
+      <div className="my-4 bg-purple-100 rounded-3xl  min-h-svh mx-auto w-1/2">
+        <div className="my-4 text-center" >
           <h2 className="text-purple-900 text-2xl font-mono font-medium">!! Connect 4 but in 3×3 grid !!</h2>
-
-
         </div>
-        <div className="my-5 text-center" >
+        <div className="my-4 text-center" >
           {winner === null ? <div className="text-purple-100">//</div> : (<div>
             <span className="px-8 text-purple-900 text-2xl font-mono font-medium">======= {winner} Wins =======</span>
           </div>)}
