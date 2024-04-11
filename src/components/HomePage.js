@@ -30,7 +30,7 @@ const HomePage = () => {
   return (
     <div className="mx-auto  justify-center items-center w-svh min-h-svh bg-purple-200 py-40">
       <div className='text-center font-mono font-extrabold text-5xl mb-40'>
-        The Cooler Tic-Tac-Toe
+        The "Cooler" Tic-Tac-Toe
       </div>
       <div className='flex flex-row'>
         <div className='mx-auto items-center bg-purple-100 px-10 rounded-lg  text-center cursor-pointer' >
