@@ -1,6 +1,8 @@
 
 
 import React, { useState } from 'react';
+import HomePage from './HomePage';
+import previous from "../utils/previous.png"
 
 const TicTacToe = () => {
   const [turn, setTurn] = useState('X');
@@ -46,9 +48,20 @@ const TicTacToe = () => {
     setCount(null)
   };
   // console.log(count)
+  const [back, setBack] = useState(false)
+
+  const goBack = () => {
+      setBack(true)
+  }
+
+  if(back){
+      return <HomePage/>
+  }
+
 
   return (
     <div className="mx-auto flex justify-center w-svh min-h-svh bg-purple-200">
+      <img src={previous} className='h-8 rounded-full my-3 mx-3 cursor-pointer' onClick={() => {goBack()}}></img>
       <div className="my-4 bg-purple-100 rounded-3xl  min-h-svh mx-auto w-1/2">
         <div className="my-4 text-center" >
           <h2 className="text-purple-900 text-2xl font-mono font-medium">!! Connect 4 but in 3×3 grid !!</h2>
