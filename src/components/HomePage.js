@@ -1,5 +1,6 @@
 import TicTacToe from './TicTacToe';
 import OnlineGameStarting from './OnlineGameStarting';
+import TakeUserName from './TakeUserName';
 import React, { useState } from 'react';
 
 const HomePage = () => {
@@ -23,7 +24,7 @@ const HomePage = () => {
   }
 
   if(online){
-    return <OnlineGameStarting/>
+    return <TakeUserName/>
   }
 
   return (
