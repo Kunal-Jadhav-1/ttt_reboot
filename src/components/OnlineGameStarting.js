@@ -22,7 +22,7 @@ const OnlineGameStarting = ({ name }) => {
             <img src={previous} className='h-8 rounded-full my-3 mx-3 cursor-pointer' onClick={() => {goBack()}}></img>
             <div className="bg-purple-100 rounded-3xl h-max mx-auto w-1/2 my-14">
                 <div className="my-10 text-center" >
-                    <span className="text-purple-900 text-2xl font-mono">Host or Join a Game {name}</span><br></br>
+                    <span className="text-purple-900 text-2xl font-mono">Host or Join a Game '{name}'</span><br></br>
                 </div>
                 <div className=" relative bg-purple-300 h-max w-4/6 mx-auto rounded-2xl p-8 my-16 px-20">
                     <div className='font-mono text-xl text-center border-4 border-purple-200 p-2 rounded-md my-10'>
