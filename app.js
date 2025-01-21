@@ -5,7 +5,6 @@ import HomePage from './src/components/HomePage';
 import Error from './src/components/Error';
 import ReactDom from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import HomePage from './src/components/HomePage';
 
 
 

@@ -1,28 +1,17 @@
-import React, { useState } from "react";
-import HomePage from "./HomePage";
+import React, { useState } from 'react';
+import HomePage from './HomePage';
 import previous from "../utils/previous.png";
 
-const TicTacToe = () => {
-  const [turn, setTurn] = useState("X");
+const Classic = () => {
+  const [turn, setTurn] = useState('X');
   const [winner, setWinner] = useState(null);
-  const [board, setBoard] = useState(Array(9).fill(""));
+  const [board, setBoard] = useState(Array(9).fill(''));
   const [count, setCount] = useState(null);
   const [logs, setLogs] = useState([]);
   const [point, setPoint] = useState(null);
-  const [back, setBack] = useState(false);
-
-  const clearBlocks = () => {
-    const newBoard = [...board];
-    for (let m = 0; m < newBoard.length; m++) {
-      if (logs.includes(m) === false) {
-        newBoard[m] = "";
-      }
-    }
-    return newBoard;
-  };
 
   const handleClick = (index) => {
-    if (!board[index] && !winner && count < 5) {
+    if (!board[index] && !winner) {
       const newBoard = [...board];
       newBoard[index] = turn;
       setBoard(newBoard);
@@ -31,21 +20,7 @@ const TicTacToe = () => {
       const prevLogs = [...logs];
       prevLogs.push(index);
       setLogs(prevLogs);
-      setTurn(turn === "X" ? "O" : "X");
-    } else if (!board[index] && !winner && count >= 5) {
-      const newBoard = clearBlocks();
-      const prevLogs = [...logs];
-      prevLogs.shift();
-      prevLogs.push(index);
-      newBoard[index] = turn;
-      setBoard(newBoard);
-      setPoint(logs[0]);
-      setLogs(prevLogs);
-      checkWinner(newBoard);
-      setTurn(turn === "X" ? "O" : "X");
-      if (count === 5) {
-        setCount(count + 1);
-      }
+      setTurn(turn === 'X' ? 'O' : 'X');
     }
   };
 
@@ -72,11 +47,13 @@ const TicTacToe = () => {
 
   const resetGame = () => {
     setWinner(null);
-    setTurn("X");
-    setBoard(Array(9).fill(""));
+    setTurn('X');
+    setBoard(Array(9).fill(''));
     setCount(null);
     setLogs([]);
   };
+
+  const [back, setBack] = useState(false);
 
   const goBack = () => {
     setBack(true);
@@ -92,11 +69,11 @@ const TicTacToe = () => {
         src={previous}
         className="h-8 rounded-full my-3 cursor-pointer md:absolute md:top-4 md:left-4"
         onClick={goBack}
-        alt="Back"
+        alt="Go Back"
       />
       <div className="bg-purple-100 rounded-3xl w-full max-w-lg p-4">
-        <h2 className="text-center text-purple-900 text-xl md:text-2xl font-mono font-semibold my-4">
-          The Disappearer
+        <h2 className="text-center text-purple-900 font-semibold text-xl md:text-2xl font-mono my-4">
+          The Classic
         </h2>
         <div className="grid grid-cols-3 gap-2 bg-purple-300 p-4 rounded-2xl">
           {board.map((cell, index) => (
@@ -132,9 +109,8 @@ const TicTacToe = () => {
           </button>
         </div>
       </div>
-     
     </div>
   );
 };
 
-export default TicTacToe;
+export default Classic;
